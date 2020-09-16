@@ -1,4 +1,4 @@
-package ar.edu.uno.poo1.proyecto_punto;
+package ar.edu.uno.poo1.proyecto_punto3d;
 
 import static org.junit.Assert.assertEquals;
 
@@ -27,6 +27,4 @@ public class PuntoTest {
 		assertEquals(new Double(3.7416573867739413), new Double(new Punto3D().calcularDistancia(new Punto3D(1.0, 2.0, 3.0))));
 	}
 	
-	
-
 }
