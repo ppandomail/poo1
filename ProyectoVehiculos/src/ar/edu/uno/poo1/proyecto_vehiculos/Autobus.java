@@ -41,4 +41,12 @@ public class Autobus extends Vehiculo {
 			super.setChofer(chofer);
 	}
 	
+	public String toString() {
+		String representacion = "-----------------------------" + "\n";
+		representacion += super.toString() + "\n" + "Cant Pasajeros: ";
+		representacion += this.getSize();
+		representacion += "\n" + "-----------------------------" + "\n";
+		return representacion;
+	}
+	
 }

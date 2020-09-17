@@ -13,7 +13,7 @@ public class Persona {
 	}
 	
 	public Persona(long dni) {
-		this(dni, "", "");
+		this(dni, "-", "-");
 	}
 	
 	public long getDni() {
@@ -42,7 +42,7 @@ public class Persona {
 
 	@Override
 	public String toString() {
-		return "Persona [dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + "]";
+		return this.getDni() + ", " + this.getNombre() + ", " + this.getApellido();
 	}
 	
 }

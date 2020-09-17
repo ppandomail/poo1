@@ -26,4 +26,12 @@ public class Motocicleta extends Vehiculo {
 			super.setChofer(chofer);
 	}
 	
+	public String toString() {
+		String representacion = "-----------------------------" + "\n";
+		representacion += super.toString() + "\n" + "Acompañante: ";
+		representacion += (this.getAcompañante() == null)? "Sin acompañante" : this.getAcompañante().toString();
+		representacion += "\n" + "-----------------------------" + "\n";
+		return representacion;
+	}
+	
 }

@@ -26,4 +26,10 @@ public abstract class Vehiculo {
 		this.cantidadKm = cantidadKm;
 	}
 	
+	public String toString() {
+		String representacion = "Chofer: ";
+		representacion += (this.getChofer() != null)? this.getChofer().toString() : "Sin chofer";
+		return representacion + "\n" + "Cantidad Km: " + this.getCantidadKm();
+	}
+	
 }
