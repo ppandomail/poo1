@@ -21,12 +21,16 @@ public class Monedero {
 	}
 
 	public boolean sacarDinero(double importeASacar) {
-		if (this.getSaldo() < importeASacar)
+		if (!this.hasSaldo(importeASacar))
 			return false;
 		this.setSaldo(this.getSaldo() - importeASacar);
 		return true;
 	}
-
+	
+	private boolean hasSaldo(double importeASacar) {
+		return this.getSaldo() >= importeASacar;
+	}
+	
 	public double consultarSaldoFormatoNumerico() {
 		return this.getSaldo();
 	}
