@@ -4,11 +4,15 @@ public class Serie extends Entrega {
 	
 	private int numeroTemporadas;
 	private String creador;
+	private int numeroTemporadas_bkp;
+	private String creador_bkp;
 	
 	public Serie(String titulo, int numeroTemporadas, Genero genero, String creador) {
 		super(titulo, genero);
 		this.setNumeroTemporadas(numeroTemporadas);
 		this.setCreador(creador);
+		this.setNumeroTemporadas_bkp(numeroTemporadas);
+		this.setCreador_bkp(creador);
 	}
 	
 	public Serie(String titulo, String creador) {
@@ -35,6 +39,22 @@ public class Serie extends Entrega {
 		this.creador = creador;
 	}
 	
+	public int getNumeroTemporadas_bkp() {
+		return this.numeroTemporadas_bkp;
+	}
+
+	private void setNumeroTemporadas_bkp(int numeroTemporadas_bkp) {
+		this.numeroTemporadas_bkp = numeroTemporadas_bkp;
+	}
+
+	public String getCreador_bkp() {
+		return this.creador_bkp;
+	}
+
+	private void setCreador_bkp(String creador_bkp) {
+		this.creador_bkp = creador_bkp;
+	}
+
 	@Override
 	public String toString() {
 		return super.toString() + ", Número de temporadas=" + this.getNumeroTemporadas() + ", Creador=" + this.getCreador();
@@ -47,6 +67,12 @@ public class Serie extends Entrega {
 		Serie serie = (Serie) objeto;
 		if (this.getNumeroTemporadas() == serie.getNumeroTemporadas()) return 0;
 		return this.getNumeroTemporadas() > serie.getNumeroTemporadas()? 1 : -1;
+	}
+	
+	public void reset() {
+		super.reset();
+		this.setNumeroTemporadas(this.getNumeroTemporadas_bkp());
+		this.setCreador(this.getCreador_bkp());
 	}
 
 }

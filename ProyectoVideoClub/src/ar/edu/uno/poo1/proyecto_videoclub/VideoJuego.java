@@ -4,11 +4,15 @@ public class VideoJuego extends Entrega {
 
 	private int horasEstimadas;
 	private String compañia;
+	private int horasEstimadas_bkp;
+	private String compañia_bkp;
 	
 	public VideoJuego(String titulo, int horasEstimdas, Genero genero, String compañia) {
 		super(titulo, genero);
 		this.setHorasEstimadas(horasEstimdas);
 		this.setCompañia(compañia);
+		this.setHorasEstimadas_bkp(horasEstimdas);
+		this.setCompañia_bkp(compañia);
 	}
 	
 	public VideoJuego(String titulo, int horasEstimadas) {
@@ -35,6 +39,22 @@ public class VideoJuego extends Entrega {
 		this.compañia = compañia;
 	}
 	
+	public int getHorasEstimadas_bkp() {
+		return this.horasEstimadas_bkp;
+	}
+
+	private void setHorasEstimadas_bkp(int horasEstimadas_bkp) {
+		this.horasEstimadas_bkp = horasEstimadas_bkp;
+	}
+
+	public String getCompañia_bkp() {
+		return this.compañia_bkp;
+	}
+
+	private void setCompañia_bkp(String compañia_bkp) {
+		this.compañia_bkp = compañia_bkp;
+	}
+
 	@Override
 	public String toString() {
 		return super.toString() + ", Horas estimadas=" + this.getHorasEstimadas() + ", Compañia=" + this.getCompañia();
@@ -47,6 +67,12 @@ public class VideoJuego extends Entrega {
 		VideoJuego videoJuego = (VideoJuego) objeto;
 		if (this.getHorasEstimadas() == videoJuego.getHorasEstimadas()) return 0;
 		return this.getHorasEstimadas() > videoJuego.getHorasEstimadas()? 1 : -1;
+	}
+	
+	public void reset() {
+		super.reset();
+		this.setHorasEstimadas(this.getHorasEstimadas_bkp());
+		this.setCompañia(this.getCompañia_bkp());
 	}
 	
 }
