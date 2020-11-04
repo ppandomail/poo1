@@ -11,11 +11,11 @@ public class EscrituraArchivoConBufferedWriter {
 		BufferedWriter bufferedWriter = null;
 		try {
 			fileWriter = new FileWriter(
-					"src//ar//edu//uno//poo1//loteprueba//out//00_puntos_primer_cuadrante.out", Boolean.TRUE);
+					"resources/Archivo.txt", Boolean.FALSE);
 			bufferedWriter = new BufferedWriter(fileWriter);
-			bufferedWriter.write("Esto es una prueba");
+			bufferedWriter.write("Recuerden que el parcial es el 12!!!");
 			bufferedWriter.newLine();
-			bufferedWriter.write("y esto otro tambien!");
+			bufferedWriter.write("y que no hay TP2");
 		} catch (IOException ioException) {
 			ioException.printStackTrace();
 		}

@@ -11,7 +11,7 @@ public class LecturaArchivo {
 		FileReader fr = null;
 		BufferedReader br = null;
 		try {
-			archivo = new File ("archivo.txt");
+			archivo = new File ("resources/Archivo.txt");
 			fr = new FileReader (archivo);
 			br = new BufferedReader(fr);
 			String linea;
